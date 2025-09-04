@@ -1,0 +1,40 @@
+.footer {
+    background-color: #000;
+    /* black background */
+    color: #fff;
+    /* white text */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+}
+
+.socials a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.socials a:hover {
+    transform: scale(1.2);
+    color: #4dabf7;
+    /* nice hover blue */
+}

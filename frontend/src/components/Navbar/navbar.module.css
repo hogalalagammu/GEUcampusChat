@@ -1,0 +1,166 @@
+.navbarcontainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 24px;
+    background: black;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Left side */
+.navbarleft {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 100%;
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Right side */
+.navbarright {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.tiltedtext {
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    transform: rotate(-5deg);
+}
+
+.navbarright a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbarright a:hover {
+    color: #4dabf7;
+}
+
+/* ===================== */
+/* MOBILE MENU + OVERLAY */
+/* ===================== */
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+/* Slide menu */
+.mobilemenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* hidden by default */
+    height: 100%;
+    width: 250px;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1100;
+    transition: right 0.3s ease-in-out;
+}
+
+.mobilemenu.open {
+    right: 0;
+}
+
+/* Close button */
+.closebtn {
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+/* Links inside mobile menu */
+.mobilemenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.mobilemenu a:hover {
+    color: #4dabf7;
+}
+
+/* Overlay (background dim) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1050;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===================== */
+/* RESPONSIVENESS */
+/* ===================== */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+    .navbarright {
+        gap: 24px;
+    }
+
+    .logo {
+        max-height: 70px;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 844px) {
+    .navbarright {
+        display: none;
+    }
+
+    .tiltedtext {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logo {
+        max-height: 60px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+    .mobilemenu a {
+        font-size: 1rem;
+    }
+}
