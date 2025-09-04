@@ -6,6 +6,7 @@ import CommunityChat from './pages/communityChat/CommunityChat';
 import Home from './pages/home/Home';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import VideoChat from './pages/videoChat/VideoChat';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/chat" element={<CommunityChat />} />
+        <Route path="/videochat" element={<VideoChat />} />
       </Routes>
       </div>
     </BrowserRouter>
